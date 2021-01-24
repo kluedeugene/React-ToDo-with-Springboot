@@ -40,5 +40,5 @@ public class TodolistApplication {
  * 생성하여 저장한다.
  * 
  * 
- * 
+ * http://localhost:8080/api/todos
  */
