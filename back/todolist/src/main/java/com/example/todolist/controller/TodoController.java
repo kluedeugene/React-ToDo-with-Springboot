@@ -37,10 +37,12 @@ public class TodoController {
     // 등록
     @PostMapping
     public ResponseEntity<String> postTodo(@RequestBody Todo todo) throws Exception {
+
+        todo.setContent(todo.getContent());
         todo.setCreatedDateTime(LocalDateTime.now());
         todo.setIsComplete(false);
         todoService.postTodo(todo);
-        return new ResponseEntity<String>("Success", HttpStatus.OK);
+        return new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
     }
 
     // 수정
@@ -52,7 +54,7 @@ public class TodoController {
         todo.setIsComplete(isComplete);
         todoService.postTodo(todo);
 
-        return new ResponseEntity<String>("Success", HttpStatus.OK);
+        return new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
     }
 
     // 삭제
@@ -60,6 +62,6 @@ public class TodoController {
     public ResponseEntity<String> deleteTodo(@PathVariable("id") Long id) throws Exception {
         todoService.deleteTodo(id);
 
-        return new ResponseEntity<String>("Success", HttpStatus.OK);
+        return new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
     }
 }

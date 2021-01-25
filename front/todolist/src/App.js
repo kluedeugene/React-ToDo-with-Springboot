@@ -58,8 +58,9 @@ class App extends React.Component {
       }),
     });
 
+    //처리
     const data = {
-      bodu: JSON.stringify({ contet: inputValue }),
+      body: JSON.stringify({ contet: inputValue }),
       headers: { "Content-Type": "application/json" },
       method: "post",
     };
@@ -68,7 +69,7 @@ class App extends React.Component {
         if (!res.ok) {
           throw new Error(res.status);
         } else {
-          return this.handleInitinfo();
+          return this.handleInitInfo();
         }
       })
       .catch((err) => console.log(err));
@@ -81,6 +82,7 @@ class App extends React.Component {
   //   }
   // }
 
+  //수정
   handleToggle(id) {
     const { todos } = this.state;
     const isComplete = todos.find((todo) => todo.id === id).isComplete;

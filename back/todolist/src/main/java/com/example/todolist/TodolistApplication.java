@@ -1,15 +1,16 @@
 package com.example.todolist;
 
-import java.time.LocalDateTime;
-import java.util.stream.IntStream;
-
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
-import com.example.todolist.domain.Todo;
-import com.example.todolist.repository.TodoRepository;
+// import java.time.LocalDateTime;
+// import java.util.stream.IntStream;
+
+// import org.springframework.boot.CommandLineRunner;
+// import org.springframework.context.annotation.Bean;
+
+// import com.example.todolist.domain.Todo;
+// import com.example.todolist.repository.TodoRepository;
 
 @SpringBootApplication
 public class TodolistApplication {
@@ -18,13 +19,16 @@ public class TodolistApplication {
 		SpringApplication.run(TodolistApplication.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner runner(TodoRepository todoRepository) throws Exception {
-		return (args) -> {
-			IntStream.rangeClosed(1, 10).forEach(index -> todoRepository.save(Todo.builder().content("오늘 할 일" + index)
-					.createdDateTime(LocalDateTime.now()).isComplete(false).build()));
-		};
-	}
+	// 서버 테스트 데이터 생성을 위해 사용한 CommandLineRunner 인터페이스를 삭제한다.
+	// @Bean
+	// public CommandLineRunner runner(TodoRepository todoRepository) throws
+	// Exception {
+	// return (args) -> {
+	// IntStream.rangeClosed(1, 10).forEach(index ->
+	// todoRepository.save(Todo.builder().content("오늘 할 일" + index)
+	// .createdDateTime(LocalDateTime.now()).isComplete(false).build()));
+	// };
+	// }
 }
 /*
  * Line 21 : 스프링은 빈(Bean) 으로 생성된 메서드에 파라미터로 DI(Dependency Injection, 스프링의 주요 특성

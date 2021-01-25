@@ -14,7 +14,7 @@ public interface TodoService {
 
     void deleteTodo(Long id) throws Exception;
 
-    Todo findTodoById(Long id) throws Exception;
+    Todo findTodoById(Long Id) throws Exception;
 }
 
 // Line 11 : Sort 를 파라미터로 가지며, Sort 를 통해 Todo 목록을 정렬하여 가져온다.

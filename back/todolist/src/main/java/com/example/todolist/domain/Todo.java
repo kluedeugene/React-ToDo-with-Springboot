@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.lang.NonNull;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,19 +27,19 @@ public class Todo implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -947585423656694361L;
-	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column
 	private String content;
-	
+
 	@Column
 	private LocalDateTime createdDateTime;
-	
+
 	@Column
 	private Boolean isComplete;
 
@@ -51,9 +53,7 @@ public class Todo implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Todo [id=" + id + 
-				", content=" + content + 
-				", createdDateTime=" + createdDateTime + 
-				", isComplete=" + isComplete + "]";
+		return "Todo [id=" + id + ", content=" + content + ", createdDateTime=" + createdDateTime + ", isComplete="
+				+ isComplete + "]";
 	}
 }
